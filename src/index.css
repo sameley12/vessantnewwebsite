@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-white text-navy font-sans antialiased;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Archivo ships width as a real variable axis rather than a separate
+   "Archivo Expanded" family — see index.html for the font request. */
+.font-expanded {
+  font-stretch: expanded;
+  letter-spacing: -0.03em;
+}
+
+.font-data {
+  @apply font-mono uppercase tracking-[0.12em];
+}
+
+/* Micro-interactions, per the master prompt's global animation system. */
+.btn-magnetic {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.btn-magnetic:hover {
+  transform: scale(1.03);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-magnetic:hover {
+    transform: none;
+  }
+}
+
+.link-lift {
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+.link-lift:hover {
+  transform: translateY(-1px);
+}
+
+/* Global noise overlay — kills flat digital gradients per the master prompt.
+   Fixed, above surfaces, below content, never intercepts input. */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+}
+
+.noise-overlay--hero {
+  opacity: 0.035;
+}
+
+.relative-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Focus rings — cyan-deep on light surfaces, cyan on navy surfaces */
+:focus-visible {
+  outline: 2px solid #23737f;
+  outline-offset: 2px;
+}
+
+.on-navy :focus-visible,
+.on-navy:focus-visible {
+  outline-color: #64d9eb;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0;
+  top: -100%;
+  z-index: 100;
+  background: #162254;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 0 0 0.5rem 0;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
