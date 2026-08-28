@@ -15,7 +15,7 @@ export const nav = {
     { href: '#pricing', label: 'Pricing' },
     { href: '#faq', label: 'FAQ' },
   ],
-  cta: `Try it: ${DEMO_NUMBER}`,
+  cta: 'Book a call',
 };
 
 export const hero = {
@@ -23,7 +23,7 @@ export const hero = {
   line1: "You're on a job.",
   line2: "We'll get the phone.",
   sub: "Vessant answers the calls you can't and texts back within 60 seconds — from your business name — then books the job into your diary.",
-  cta: `Ring the demo line: ${DEMO_NUMBER}`,
+  cta: 'Book a 20-minute call',
   secondary: `Or text DEMO to ${DEMO_NUMBER}`,
   trust: 'UK-built · PECR & GDPR compliant · No change to how you work',
 };
@@ -221,7 +221,7 @@ export const faq = [
 
 export const finalCta = {
   line: 'The job goes to whoever replies first.',
-  primary: `Ring the demo line: ${DEMO_NUMBER}`,
+  primary: 'Book a 20-minute call',
   secondary: 'Book a call',
 };
 
